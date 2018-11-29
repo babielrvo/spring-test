@@ -8,7 +8,7 @@ public class CachedTestService implements TestService {
 
   @Override
   public boolean doSomething() {
-    return testService.doSomething();
+    return testService != null && testService.doSomething();
   }
 
   @Override

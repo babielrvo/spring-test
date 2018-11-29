@@ -11,8 +11,7 @@ public class TestServiceImpl implements TestService {
 
     @Override
     public boolean doSomething() {
-        //something
-        return true;
+        return repository != null;
     }
 
     @Override
