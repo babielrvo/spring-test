@@ -3,22 +3,21 @@ package org.rvanooyen.spring.test.service;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.rvanooyen.spring.test.repositories.ExampleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:spring/testConfig.xml"})
 public class TestServiceTest {
 
     @Autowired
-    ExampleRepository repository;
-
-    @Autowired
-    TestService service;
+    @Qualifier("testService")
+    public TestService service;
 
 
     @Before
